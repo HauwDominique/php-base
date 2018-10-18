@@ -16,6 +16,7 @@
 		    $message = $_POST['message'];
 		}
 	?>
+
 	<div class="container">
 		<h1>Formulaire de contact</h1>
 		<form method="POST">
