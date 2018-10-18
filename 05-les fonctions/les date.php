@@ -22,11 +22,18 @@ echo 'Dans 10 jours nous serons ' .date('l', $futurDay) .'<br>';
 // echo 'Dans 10 jours nous serons ' .date('l', strtotime('+10 day'));
 
 // var dump(date('d/m/y', time());
-var dump(date('d/m/y', strtotime ('+ 10 days'));
+// var dump(date('d/m/y', strtotime ('+ 10 days'));
 
 // Trouver quel jour sera ton prochain anniversaire
 $timestampBirthday = strtotime('13 april 2019');
-echo 'Le jour de mon anniversaire sera un ' .date('l', $timestampBirthday);
+echo 'Le jour de mon anniversaire sera un ' .date('l', $timestampBirthday) .'<br>';
+
+// Dans combien sera Noël ?
+$currentTimestamp = time();
+$targetTimestamp = strtotime('25 december 2018'); //on converti cette chaine en timestamp
+
+echo 'Noel sera dans '.($targetTimestamp - $currentTimestamp)/60/60/24;
+
 
 
 ?>

@@ -20,8 +20,6 @@ foreach ($fruits as $lettre => $fruit) {
 }
 echo '<br>';
 
-
-
 // Exercice sur les tableaux--------------------
 
 $eleves = [
@@ -31,11 +29,11 @@ $eleves = [
     ],
     1 => [
         'nom' => 'Thomas',
-        'notes' => [4, 18, 12, 15, 13, 7]
+        'notes' => [20, 18, 12, 15, 13, 7]
     ],
     2 => [
         'nom' => 'Jean',
-        'notes' => [17, 14, 6, 2, 16, 18, 9]
+        'notes' => [17, 20, 6, 2, 16, 18, 9]
     ],
     3 => [
         'nom' => 'Enzo',
@@ -97,24 +95,39 @@ $eleves = [
 
         echo '<br>';
     }
-    
 
-    // for ($i=0; $i<count($eleves); $i++) {
-    //     echo $eleves[$i]['nom'] .' a eu : ';
-        
-    //     // la boucle récupérant les notes de l'élève
-    //     $noteGlobale = "";
-    //     for($note=0; $note<count($eleves[$i]['notes']); $note++) {
-    //     $noteGlobale = $noteGlobale .$eleves[$i]['notes'][$note] .' - ';
+
+    // Voir si quelqu'un a eu 20.
+
+    $isTwenty = false;
+
+    foreach ($eleves as $eleve) {
+        foreach ($eleve['notes'] as $note) {
+            if(20 === $note) {
+                $isTwenty = true;
+                break 2;
+            }
+        }
+    }
+
+    if ($isTwenty) {
+        echo 'quelqu\'un a eu 20';
+    } else {
+        echo 'personne n\'a eu 20';
+    }
+
+
+    // foreach ($eleves as $eleve) {
+    //     foreach ($eleve['notes'] as $note) {
+    //         if ($note === 20) {
+    //             echo $eleve['nom'] .' a eu 20 ; ';
+    //             break 2;
+    //         } 
+    //         else {
+    //             echo 'personne n\'a eu 20 ; ';
+    //         } 
+    //     }
     // }
-    // echo $noteGlobale .'<br>';
-
-    //     // echo $eleves[$i]['nom'][0] .'<br>';
-    // }
-
-    // var_dump ($eleves);
     
-
-
 
 ?>
