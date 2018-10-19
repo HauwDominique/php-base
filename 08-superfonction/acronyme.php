@@ -2,7 +2,9 @@
 
 echo '<h3>Fonction World of Warcraft</h3>';
 
-$array_keywords = explode(' ', 'World of Warcraft version 2');
+$name = 'World of Warcraft';
+
+$array_keywords = explode(' ', $name);
 
 // on récupère les valeurs du tableau avec une boucle
 foreach ($array_keywords as $value) {
@@ -12,7 +14,7 @@ foreach ($array_keywords as $value) {
 
 }
 
-echo '<h3>Fonction Conjugaison </h3>';
+echo '<h3>Fonction Conjugaison au présent </h3>';
 
 $verbe = 'trouver';
 
@@ -37,4 +39,22 @@ $tableauVerbeGroupe1 = ['Je _e', 'Tu _es', 'Il _e', 'Nous _ons', 'Vous _ez', 'Il
 foreach ($tableauVerbeGroupe1 as $chaine) {
     echo str_replace ('_', $baseVerbale,  $chaine).'<br>';
 }
-    
+
+echo '<h3>Conjugaison à l\'imparfait</h3>';
+
+$tableauVerbeGroupe1Imparfait = ['Je _ais', 'Tu _ais', 'Il _ait', 'Nous _ions', 'Vous _iez', 'Ils _aient'];
+foreach ($tableauVerbeGroupe1Imparfait as $chaine) {
+    echo str_replace ('_', $baseVerbale,  $chaine).'<br>';
+}
+
+
+
+$base = array("je", "tu", "il", "nous", "vous", "ils");
+var_dump($base);
+$replacements = array(0 => "j\'");
+// $replacements2 = array(0 => "grape");
+
+$basket = array_replace($base, $replacements);
+var_dump($basket);
+
+var_dump(__DIR__);
